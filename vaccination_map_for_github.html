@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e624bf0d5f2736a868874e6fe05aedf6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; 
+            bottom: 50px; left: 50px; width: 180px; height: 150px; 
+            border:2px solid grey; z-index:9999; font-size:14px;">
+ &nbsp; <b>Vaccination Rates</b> <br>
+ &nbsp; <i style="background:green"></i> &nbsp; 80% and above<br>
+ &nbsp; <i style="background:orange"></i> &nbsp; 60% to 79% <br>
+ &nbsp; <i style="background:red"></i> &nbsp; Below 60% <br>
+</div>
+    
+            <div class="folium-map" id="map_e624bf0d5f2736a868874e6fe05aedf6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e624bf0d5f2736a868874e6fe05aedf6 = L.map(
+                "map_e624bf0d5f2736a868874e6fe05aedf6",
+                {
+                    center: [20.0, 0.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_62dfad6448e77eb0f15af714dd5d0ecb = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+            var circle_marker_98dc38ad391a5a1148a6a103b3884074 = L.circleMarker(
+                [37.0902, -95.7129],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_e49c3656ae056bc83ee8928e0ca6bb6b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_324d83a6a695c6a8c14a5aa0927c8d30 = $(`<div id="html_324d83a6a695c6a8c14a5aa0927c8d30" style="width: 100.0%; height: 100.0%;">Region: United States<br>Vaccination Rate: 77%<br>Vaccination Mandate: Yes<br>Latitude: 37.0902<br>Longitude: -95.7129</div>`)[0];
+            popup_e49c3656ae056bc83ee8928e0ca6bb6b.setContent(html_324d83a6a695c6a8c14a5aa0927c8d30);
+        
+
+        circle_marker_98dc38ad391a5a1148a6a103b3884074.bindPopup(popup_e49c3656ae056bc83ee8928e0ca6bb6b)
+        ;
+
+        
+    
+    
+            circle_marker_98dc38ad391a5a1148a6a103b3884074.bindTooltip(
+                `<div>
+                     United States: 77%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_db43b4b42009c98a80e54afe7aa957b8 = L.circleMarker(
+                [20.5937, 78.9629],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_3572c9427924df05a20169109cc3f75b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5bec282a69e6e716a45e806848fef6bb = $(`<div id="html_5bec282a69e6e716a45e806848fef6bb" style="width: 100.0%; height: 100.0%;">Region: India<br>Vaccination Rate: 58%<br>Vaccination Mandate: Yes<br>Latitude: 20.5937<br>Longitude: 78.9629</div>`)[0];
+            popup_3572c9427924df05a20169109cc3f75b.setContent(html_5bec282a69e6e716a45e806848fef6bb);
+        
+
+        circle_marker_db43b4b42009c98a80e54afe7aa957b8.bindPopup(popup_3572c9427924df05a20169109cc3f75b)
+        ;
+
+        
+    
+    
+            circle_marker_db43b4b42009c98a80e54afe7aa957b8.bindTooltip(
+                `<div>
+                     India: 58%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_08553714a8f1dc6e3b2cdacbb071863a = L.circleMarker(
+                [-14.235, -51.9253],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_bd333f2ea2d3b7de892d313c40c0c9e4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ab351639f66c760afe7d2439c702a052 = $(`<div id="html_ab351639f66c760afe7d2439c702a052" style="width: 100.0%; height: 100.0%;">Region: Brazil<br>Vaccination Rate: 80%<br>Vaccination Mandate: Yes<br>Latitude: -14.235<br>Longitude: -51.9253</div>`)[0];
+            popup_bd333f2ea2d3b7de892d313c40c0c9e4.setContent(html_ab351639f66c760afe7d2439c702a052);
+        
+
+        circle_marker_08553714a8f1dc6e3b2cdacbb071863a.bindPopup(popup_bd333f2ea2d3b7de892d313c40c0c9e4)
+        ;
+
+        
+    
+    
+            circle_marker_08553714a8f1dc6e3b2cdacbb071863a.bindTooltip(
+                `<div>
+                     Brazil: 80%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_798773c34ef63e1d09c12eb25c549a10 = L.circleMarker(
+                [61.524, 105.3188],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_93db8b81b2e5699eaf72d808435061ba = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a7c279c4062ea1d108640555f9af81ca = $(`<div id="html_a7c279c4062ea1d108640555f9af81ca" style="width: 100.0%; height: 100.0%;">Region: Russia<br>Vaccination Rate: 75%<br>Vaccination Mandate: Yes<br>Latitude: 61.524<br>Longitude: 105.3188</div>`)[0];
+            popup_93db8b81b2e5699eaf72d808435061ba.setContent(html_a7c279c4062ea1d108640555f9af81ca);
+        
+
+        circle_marker_798773c34ef63e1d09c12eb25c549a10.bindPopup(popup_93db8b81b2e5699eaf72d808435061ba)
+        ;
+
+        
+    
+    
+            circle_marker_798773c34ef63e1d09c12eb25c549a10.bindTooltip(
+                `<div>
+                     Russia: 75%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f0aa7bf401a2c48b9823ce1d9a7dec05 = L.circleMarker(
+                [51.1657, 10.4515],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_c4d45c4f9b03a2b9fc27947f749ce451 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_970a9c526033bb201e799ba8a7608c86 = $(`<div id="html_970a9c526033bb201e799ba8a7608c86" style="width: 100.0%; height: 100.0%;">Region: Germany<br>Vaccination Rate: 69%<br>Vaccination Mandate: Yes<br>Latitude: 51.1657<br>Longitude: 10.4515</div>`)[0];
+            popup_c4d45c4f9b03a2b9fc27947f749ce451.setContent(html_970a9c526033bb201e799ba8a7608c86);
+        
+
+        circle_marker_f0aa7bf401a2c48b9823ce1d9a7dec05.bindPopup(popup_c4d45c4f9b03a2b9fc27947f749ce451)
+        ;
+
+        
+    
+    
+            circle_marker_f0aa7bf401a2c48b9823ce1d9a7dec05.bindTooltip(
+                `<div>
+                     Germany: 69%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a0c78430a3886435ef05e268b8fcf44c = L.circleMarker(
+                [-30.5595, 22.9375],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_601c2174e2e7686684a0610d8438db0f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0104251358748863f2956a45817d8e32 = $(`<div id="html_0104251358748863f2956a45817d8e32" style="width: 100.0%; height: 100.0%;">Region: South Africa<br>Vaccination Rate: 80%<br>Vaccination Mandate: Yes<br>Latitude: -30.5595<br>Longitude: 22.9375</div>`)[0];
+            popup_601c2174e2e7686684a0610d8438db0f.setContent(html_0104251358748863f2956a45817d8e32);
+        
+
+        circle_marker_a0c78430a3886435ef05e268b8fcf44c.bindPopup(popup_601c2174e2e7686684a0610d8438db0f)
+        ;
+
+        
+    
+    
+            circle_marker_a0c78430a3886435ef05e268b8fcf44c.bindTooltip(
+                `<div>
+                     South Africa: 80%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d3a97ed70ea9d6528e9e1a9383f59b69 = L.circleMarker(
+                [-25.2744, 133.7751],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_63424c7b039fd3f444baaa7de9367450 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_92f150abef17337d2e7fc4a03c78ee17 = $(`<div id="html_92f150abef17337d2e7fc4a03c78ee17" style="width: 100.0%; height: 100.0%;">Region: Australia<br>Vaccination Rate: 72%<br>Vaccination Mandate: Yes<br>Latitude: -25.2744<br>Longitude: 133.7751</div>`)[0];
+            popup_63424c7b039fd3f444baaa7de9367450.setContent(html_92f150abef17337d2e7fc4a03c78ee17);
+        
+
+        circle_marker_d3a97ed70ea9d6528e9e1a9383f59b69.bindPopup(popup_63424c7b039fd3f444baaa7de9367450)
+        ;
+
+        
+    
+    
+            circle_marker_d3a97ed70ea9d6528e9e1a9383f59b69.bindTooltip(
+                `<div>
+                     Australia: 72%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ea31523fc81fca9cfed47940b7cc8a2 = L.circleMarker(
+                [35.8617, 104.1954],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_7cf6edf8a9b18d6352b2718bc538cbee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0513a46b3a4cefe4e2a36dbd29650436 = $(`<div id="html_0513a46b3a4cefe4e2a36dbd29650436" style="width: 100.0%; height: 100.0%;">Region: China<br>Vaccination Rate: 88%<br>Vaccination Mandate: Yes<br>Latitude: 35.8617<br>Longitude: 104.1954</div>`)[0];
+            popup_7cf6edf8a9b18d6352b2718bc538cbee.setContent(html_0513a46b3a4cefe4e2a36dbd29650436);
+        
+
+        circle_marker_8ea31523fc81fca9cfed47940b7cc8a2.bindPopup(popup_7cf6edf8a9b18d6352b2718bc538cbee)
+        ;
+
+        
+    
+    
+            circle_marker_8ea31523fc81fca9cfed47940b7cc8a2.bindTooltip(
+                `<div>
+                     China: 88%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6bdf2e616107857bd677cc3db4328687 = L.circleMarker(
+                [36.2048, 138.2529],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_821c7e3ce721ecd99bcc0007ed670b03 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4a6e781d024163b169fc313b0ebee607 = $(`<div id="html_4a6e781d024163b169fc313b0ebee607" style="width: 100.0%; height: 100.0%;">Region: Japan<br>Vaccination Rate: 68%<br>Vaccination Mandate: No<br>Latitude: 36.2048<br>Longitude: 138.2529</div>`)[0];
+            popup_821c7e3ce721ecd99bcc0007ed670b03.setContent(html_4a6e781d024163b169fc313b0ebee607);
+        
+
+        circle_marker_6bdf2e616107857bd677cc3db4328687.bindPopup(popup_821c7e3ce721ecd99bcc0007ed670b03)
+        ;
+
+        
+    
+    
+            circle_marker_6bdf2e616107857bd677cc3db4328687.bindTooltip(
+                `<div>
+                     Japan: 68%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aafee2f22a97cc43a1e49fef1154423c = L.circleMarker(
+                [56.1304, -106.3468],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_e624bf0d5f2736a868874e6fe05aedf6);
+        
+    
+        var popup_e7d2949e2da499240265ce3218162a58 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_189364896aea27311905041240203921 = $(`<div id="html_189364896aea27311905041240203921" style="width: 100.0%; height: 100.0%;">Region: Canada<br>Vaccination Rate: 76%<br>Vaccination Mandate: Yes<br>Latitude: 56.1304<br>Longitude: -106.3468</div>`)[0];
+            popup_e7d2949e2da499240265ce3218162a58.setContent(html_189364896aea27311905041240203921);
+        
+
+        circle_marker_aafee2f22a97cc43a1e49fef1154423c.bindPopup(popup_e7d2949e2da499240265ce3218162a58)
+        ;
+
+        
+    
+    
+            circle_marker_aafee2f22a97cc43a1e49fef1154423c.bindTooltip(
+                `<div>
+                     Canada: 76%
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
